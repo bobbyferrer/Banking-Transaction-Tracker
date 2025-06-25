@@ -1,0 +1,204 @@
+:root {
+  --primary-blue: #1e40af;
+  --success-green: #059669;
+  --danger-red: #dc2626;
+  --warning-orange: #d97706;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+  padding: 2rem 0;
+}
+
+.banking-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  background: linear-gradient(135deg, var(--primary-blue), #3b82f6);
+  color: white;
+  border: none;
+  padding: 1.5rem;
+}
+
+.customer-info {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.customer-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.balance-display {
+  background: linear-gradient(135deg, var(--success-green), #10b981);
+  color: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+}
+
+.balance-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.transaction-form {
+  background: #f8fafc;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue), #3b82f6);
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--success-green), #10b981);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--danger-red), #ef4444);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 2px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 0.2rem rgba(30, 64, 175, 0.15);
+}
+
+.table {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #1f2937, #374151);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+.table tbody td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-color: #f1f5f9;
+}
+
+.transaction-deposit {
+  border-left: 4px solid var(--success-green);
+  background: rgba(5, 150, 105, 0.05);
+}
+
+.transaction-withdrawal {
+  border-left: 4px solid var(--danger-red);
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.amount-positive {
+  color: var(--success-green);
+  font-weight: 600;
+}
+
+.amount-negative {
+  color: var(--danger-red);
+  font-weight: 600;
+}
+
+.loading-spinner {
+  display: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #64748b;
+}
+
+.empty-state i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem 0;
+  }
+
+  .balance-amount {
+    font-size: 2rem;
+  }
+
+  .customer-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .transaction-form {
+    padding: 1.5rem;
+  }
+}

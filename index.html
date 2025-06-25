@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking Transaction Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container main-container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="card banking-card">
+            <div class="card-header text-center">
+              <h1 class="mb-0">
+                <i class="bi bi-bank2 me-2"></i>
+                Banking Transaction Tracker
+              </h1>
+              <p class="mb-0 mt-2 opacity-75">
+                Manage your transactions with ease
+              </p>
+            </div>
+
+            <div class="card-body p-4">
+              <!-- Customer Section -->
+              <div class="customer-info">
+                <div class="row align-items-center">
+                  <div class="col-md-8">
+                    <div class="d-flex align-items-center">
+                      <img
+                        id="customerPhoto"
+                        src="https://via.placeholder.com/80x80/e2e8f0/64748b?text=?"
+                        alt="Customer"
+                        class="customer-avatar me-3"
+                      />
+                      <div>
+                        <h4 id="customerName" class="mb-1 text-primary">
+                          Welcome, Guest
+                        </h4>
+                        <p id="customerEmail" class="mb-0 text-muted">
+                          Load customer data to get started
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <button id="loadCustomerBtn" class="btn btn-primary">
+                      <span
+                        class="loading-spinner spinner-border spinner-border-sm me-2"
+                        role="status"
+                      ></span>
+                      <i class="bi bi-person-plus me-2"></i>
+                      Load Customer
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Balance Display -->
+              <div class="balance-display">
+                <h5 class="mb-2 opacity-75">Current Balance</h5>
+                <p id="currentBalance" class="balance-amount">$0.00</p>
+              </div>
+
+              <!-- Transaction Form -->
+              <div class="transaction-form">
+                <h5 class="mb-3 text-primary">
+                  <i class="bi bi-plus-circle me-2"></i>
+                  Add New Transaction
+                </h5>
+                <form id="transactionForm">
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <label
+                        for="transactionType"
+                        class="form-label fw-semibold"
+                        >Transaction Type</label
+                      >
+                      <select id="transactionType" class="form-select" required>
+                        <option value="">Select Type</option>
+                        <option value="deposit">💰 Deposit</option>
+                        <option value="withdrawal">💸 Withdrawal</option>
+                      </select>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                      <label
+                        for="transactionAmount"
+                        class="form-label fw-semibold"
+                        >Amount</label
+                      >
+                      <div class="input-group">
+                        <span class="input-group-text">₱</span>
+                        <input
+                          type="number"
+                          id="transactionAmount"
+                          class="form-control"
+                          placeholder="0.00"
+                          step="0.01"
+                          min="0.01"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-3 mb-3 d-flex align-items-end">
+                      <button type="submit" class="btn btn-success w-100">
+                        <i class="bi bi-plus-lg me-2"></i>
+                        Add Transaction
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Transactions Table -->
+              <div class="row">
+                <div class="col-12">
+                  <h5 class="mb-3 text-primary">
+                    <i class="bi bi-list-ul me-2"></i>
+                    Transaction History
+                  </h5>
+                  <div id="transactionsContainer">
+                    <div class="empty-state">
+                      <i class="bi bi-receipt"></i>
+                      <h6>No transactions yet</h6>
+                      <p>Add your first transaction to get started</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/v7.js"></script>
+  </body>
+</html>
