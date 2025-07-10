@@ -131,7 +131,7 @@ class TransactionManager {
     // Show success message
     const actionText = type === "deposit" ? "deposited" : "withdrawn";
     this.showAlert(
-      `Successfully ${actionText} $${amount.toFixed(2)}`,
+      `Successfully ${actionText} ₱${amount.toFixed(2)}`,
       "success"
     );
 
